@@ -7,7 +7,7 @@
 body {
   font-family: 'Lato', sans-serif;
   line-height: 1.4;
-  background: url(../img/background.png) no-repeat center center fixed;
+  background: url(img/background.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -33,6 +33,10 @@ h1 {
   display: flex;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 #content .tabs {
   display: flex;
   flex-direction: column;
@@ -51,16 +55,223 @@ h1 {
   white-space: nowrap;
 }
 
-#checkout {
-  background-color: rgb(209, 209, 236);
-  height: 80vh;
-  flex: 2;
-}
-
 #tabs-content {
   width: 80%;
   height: 80vh;
   margin-right: 20px;
+}
+
+/* Checkout */
+
+#checkout {
+  background-color: rgba(0, 0, 0, 0.623);
+  height: 80vh;
+  flex: 2;
+  padding: 20px;
+}
+
+#price {
+  color: #fff;
+  font-size: 3rem;
+}
+
+#checkout #offer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 70px;
+  color: white;
+  font-size: 3rem;
+}
+
+#checkout h2 {
+  color: #fff;
+  text-align: center;
+}
+
+#checkout ul {
+  list-style: none;
+  margin-top: 70px;
+}
+
+#checkout ul li {
+  font-size: 1.2rem;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 20px;
+  padding: 7px;
+}
+
+#checkout ul li i {
+  margin-right: 5px;
+}
+
+.btn {
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  margin: 100px auto;
+  background-color: rgba(0, 0, 0, 0.623);
+  color: #fff;
+  padding: 10px 60px;
+  border: 2px solid white;
+  font-size: 1.4rem;
+}
+
+/* Payment */
+.wrapper {
+  display: none;
+  margin-top: -20px;
+}
+.payment {
+  background-color: #fff;
+  max-width: 360px;
+  margin: 0 auto;
+  height: auto;
+  padding: 35px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.payment h3 {
+  margin-top: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #0d3c61;
+  font-size: 3rem;
+}
+
+.payment h4 {
+  margin-top: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #0d3c61;
+  font-size: 2rem;
+}
+
+.form .label {
+  display: block;
+  color: #555555;
+  margin-bottom: 6px;
+}
+
+.input {
+  padding: 10px 0px 10px 25px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #dddddd;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  outline: none;
+  font-size: 16px;
+  color: #555555;
+}
+
+.card-grp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-item {
+  width: 48%;
+}
+
+.space {
+  margin-bottom: 20px;
+}
+
+.icon-relative {
+  position: relative;
+}
+
+.icon-relative .fas,
+.icon-relative .far {
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+  font-size: 20px;
+  color: #555555;
+}
+
+.btn-pay {
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+  background: #161738;
+  padding: 12px;
+  text-align: center;
+  color: #f8f8f8;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-pay:before,
+.btn-pay:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.2;
+  transform: rotate(30deg);
+  transition: all ease 1s;
+}
+
+.btn-pay:after {
+  transition-delay: 0.2s;
+}
+
+.btn-pay:hover:before,
+.btn-pay:hover:after {
+  left: 100%;
+}
+
+.payment-logo {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: #f8f8f8;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 85px;
+}
+
+.payment-logo:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 90px;
+  height: 90px;
+  background: #161738;
+  border-radius: 50%;
+}
+
+.payment-logo p {
+  position: relative;
+  color: #f8f8f8;
+  font-size: 25px;
+  margin-top: 6px;
+}
+
+@media screen and (max-width: 420px) {
+  .card-grp {
+    flex-direction: column;
+  }
+  .card-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .btn {
+    margin-top: 20px;
+  }
 }
 
 /* Start video */
@@ -119,9 +330,13 @@ h1 {
 
 #description__text {
   flex: 1;
-  padding: 100px 20px 0 20px;
+  padding: 10px 20px 0 20px;
 }
 
+#description__logo {
+  width: 50%;
+  margin-left: -120px;
+}
 #description__text h2 {
   text-align: center;
   margin-bottom: 50px;
@@ -149,7 +364,7 @@ h1 {
 
 #reviews,
 #features {
-  margin-top: 110px;
+  margin-top: 80px;
 }
 
 .fa-check-circle {

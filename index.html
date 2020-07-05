@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.css"
+        integrity="sha256-6Wozb/CzRANFOaGqN+u/uRT7kcffVIQt9OhOuuA6I9o=" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container main_content hidden">
         <div id="content">
             <div class="tabs">
                 <a href="#" data-target="description">Universal kit</a>
@@ -19,8 +23,88 @@
             </div>
             <div id='tabs-content'></div>
         </div>
-        <div id="checkout"></div>
+        <div id="checkout">
+            <div id="checkout__offer">
+                <h2>Preorder Universal Kit</h2>
+                <div id="offer">
+                    <div><span id="price" data-target="399">798</span>&pound</div>
+                    <div class='discount hidden'>-50%</div>
+                </div>
+                <ul>
+                    <li><i class="fas fa-plus"></i> 250 W/40Nn torque DC motor</li>
+                    <li><i class="fas fa-plus"></i>
+
+                        Lithium-Ion Power Pack</li>
+                    <li><i class="fas fa-plus"></i>
+
+                        Up to 50km on one charge</li>
+                    <li><i class="fas fa-plus"></i>
+
+                        Top speed up to 15MPH</li>
+                </ul>
+                <input type="submit" value="Preorder now" class="btn"></input>
+            </div>
+
+            <div class="wrapper">
+                <div class="payment">
+                    <div class="payment-logo">
+                        <p>swytch</p>
+                    </div>
+                    <div class="form">
+                        <div class="card space icon-relative">
+                            <label class="label">Name:</label>
+                            <input type="text" class="input" placeholder="Name">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="card space icon-relative">
+                            <label class="label">Email:</label>
+                            <input type="email" class="input" placeholder="Email">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                    </div>
+
+                    <h3>339 &pound;</h3>
+                    <h4>Universal Kit</h4>
+                    <div class="form">
+                        <div class="card space icon-relative">
+                            <label class="label">Card holder:</label>
+                            <input type="text" class="input" placeholder="Card holder name">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <div class="card space icon-relative">
+                            <label class="label">Card number:</label>
+                            <input type="text" class="input cc-number" data-mask="0000 0000 0000 0000"
+                                placeholder="Card Number">
+                            <i class="far fa-credit-card"></i>
+                        </div>
+                        <div class="card-grp space">
+                            <div class="card-item icon-relative">
+                                <label class="label">Expiry date:</label>
+                                <input type="text" name="expiry-data" data-mask="00 / 00" class="input cc-expires"
+                                    placeholder="00 / 00">
+                                <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="card-item icon-relative">
+                                <label class="label">CVC:</label>
+                                <input type="text" class="input cc-cvc" data-mask="000" placeholder="000">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        </div>
+
+                        <div class="btn-pay">
+                            Pay
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
     </div>
+
 
     <div id="start-container">
         <div id="overlay"></div>
@@ -30,6 +114,9 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+        integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+        crossorigin="anonymous"></script>
 
     <script src="js/app.js"></script>
 </body>

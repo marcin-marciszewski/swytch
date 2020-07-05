@@ -18,20 +18,69 @@ $(document).ready(function () {
     })
 });
 
-// Close video
 $(document).on('touchend, mouseup', function (e) {
+    const mainContent = document.querySelector('.main_content');
+    const pluses = document.querySelectorAll('.fa-plus');
+
+    // Close start video
     if (!$('#video').is(e.target)) {
         $('#video, #overlay').fadeOut('slow');
         $('#video-container').html('');
     }
 
-    foo();
+    // Show main content
+    mainContent.classList.remove("hidden");
 
+    // Animate pluses in the features list
+    let seconds = 4000;
+    for (let i = 0; i < pluses.length; i++) {
+        setTimeout(function () {
+            pluses[i].classList.add("animate__animated", "animate__rotateIn");
+        }, seconds);
 
+        seconds += 500;
+    }
+
+    // Count down the price
+
+    setTimeout(function () {
+        updatePrice();
+    }, 1000);
 });
 
-function foo() {
-    setTimeout(function () {
-        console.log("aaa");
-    }, 3000);
-}
+// Price counter
+const updatePrice = () => {
+    const counter = document.getElementById('price');
+    const discount = document.querySelector('.discount');
+    const speed = 2000;
+
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+
+    const decrement = target / speed;
+
+    if (count > target) {
+        counter.innerText = Math.floor(count - decrement);
+        setTimeout(updatePrice, 1);
+    } else {
+        count.innerText = target;
+
+    }
+
+    if (count === target) {
+        discount.classList.remove("hidden");
+        discount.classList.add("animate__animated", "animate__heartBeat");
+    }
+};
+
+
+
+// Preorder button
+const btn = document.querySelector('.btn');
+
+// Open checkout
+btn.addEventListener('click', (e) => {
+    document.querySelector('#checkout__offer').style.display = 'none';
+    document.querySelector('.wrapper').style.display = 'block';
+    e.preventDefault();
+})
