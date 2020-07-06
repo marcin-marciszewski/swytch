@@ -551,15 +551,57 @@ h1 {
   #description,
   #gallery,
   #mission {
-    width: 560px;
+    max-width: 560px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 375px) {
+  @media screen and (max-height: 667px) {
+    #mission {
+      margin-top: 200px !important;
+      padding: 10px;
+    }
+  }
   body {
     overflow: auto;
   }
   .main_content {
     flex-direction: column;
+  }
+
+  #checkout {
+    margin-top: 450px;
+  }
+  #content .tabs {
+    flex-direction: column;
+  }
+
+  #content .tabs a {
+    margin: 12px;
+  }
+
+  #description {
+    margin-top: 200px;
+    height: 800px;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  #mission {
+    margin-top: 200px;
+    padding: 10px;
+  }
+
+  .mission__content img {
+    width: 100%;
+  }
+  #description,
+  #gallery,
+  #mission {
+    max-width: 330px;
+  }
+
+  .payment {
+    padding: 15px;
   }
 }
