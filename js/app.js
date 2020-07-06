@@ -32,7 +32,7 @@ $(document).on('touchend, mouseup', function (e) {
     mainContent.classList.remove("hidden");
 
     // Animate pluses in the features list
-    let seconds = 4000;
+    let seconds = 3000;
     for (let i = 0; i < pluses.length; i++) {
         setTimeout(function () {
             pluses[i].classList.add("animate__animated", "animate__rotateIn");
@@ -42,10 +42,11 @@ $(document).on('touchend, mouseup', function (e) {
     }
 
     // Count down the price
-
     setTimeout(function () {
         updatePrice();
     }, 1000);
+
+
 });
 
 // Price counter
@@ -73,14 +74,25 @@ const updatePrice = () => {
     }
 };
 
-
-
-// Preorder button
-const btn = document.querySelector('.btn');
-
 // Open checkout
+const btn = document.querySelector('.btn');
 btn.addEventListener('click', (e) => {
     document.querySelector('#checkout__offer').style.display = 'none';
     document.querySelector('.wrapper').style.display = 'block';
     e.preventDefault();
-})
+});
+
+// Order confirmation
+const btnPay = document.querySelector('.btn-pay');
+btnPay.addEventListener('click', (e) => {
+    document.querySelector('#checkout__offer').style.display = 'block';
+    document.querySelector('.wrapper').style.display = 'none';
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'We have got your order',
+        showConfirmButton: false,
+        timer: 2000
+    })
+    e.preventDefault();
+});
