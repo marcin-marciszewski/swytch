@@ -128,11 +128,6 @@ btnPay.addEventListener('click', (e) => {
     e.preventDefault();
 });
 
-// 
-// if ($(window).width() < 500 ) {
-//     document.querySelector('#checkout').style.marignTop = "400px";
-//  }
-
 if ($("#description").is(":visible") == true) {
     alert("Div is visible!!");
 }

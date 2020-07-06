@@ -16,7 +16,6 @@ body {
 }
 
 .container {
-  /* max-width: 1280px; */
   padding: 0 1.5rem;
   margin: 10vh auto;
   display: flex;
@@ -28,7 +27,6 @@ h1 {
 
 #content {
   height: 80vh;
-  /* background-color: rgb(224, 183, 183); */
   flex: 6;
   display: flex;
 }
@@ -603,5 +601,11 @@ h1 {
 
   .payment {
     padding: 15px;
+  }
+
+  #video {
+    top: 35%;
+    left: 10%;
+    width: 80%;
   }
 }
